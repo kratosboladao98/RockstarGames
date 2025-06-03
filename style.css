@@ -1,0 +1,1261 @@
+/* ==================================================== */
+/* 1. ESTILOS GERAIS E RESET */
+/* ==================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    transition: background 1s ease;
+}
+
+:root {
+    --header-height: 80px;
+    --footer-height: 200px;
+}
+
+.container-pagina {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.container-pagina h1 {
+    font-size: 2.5em;
+    color: #f00;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.container-pagina p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ccc;
+}
+
+
+/* ==================================================== */
+/* 2. INTRODUÇÃO E ANIMAÇÃO DE CARREGAMENTO */
+/* ==================================================== */
+#intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000;
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    transition: opacity 1s ease;
+}
+
+#logo {
+    width: 150px;
+    animation: spinZoom 2.5s ease-in-out forwards;
+}
+
+.hidden {
+    display: none;
+}
+
+#site {
+    opacity: 0;
+    transition: opacity 1s ease;
+    background-color: #000;
+    min-height: 100vh;
+    padding: 0;
+}
+
+#site.visible {
+    opacity: 1;
+}
+
+@keyframes spinZoom {
+    0% {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(720deg) scale(2);
+        opacity: 0;
+    }
+}
+
+/* ==================================================== */
+/* 3. CABEÇALHO (HEADER) */
+/* ==================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: transform 0.3s ease-in-out;
+    height: var(--header-height);
+}
+
+header.header-hidden {
+    transform: translateY(-100%);
+}
+
+.logo-link img.logo-img {
+    width: 80px;
+    transition: transform 0.3s;
+}
+
+.logo-link:hover img.logo-img {
+    transform: scale(1.05);
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu li a:hover {
+    color: #f00;
+}
+
+#menu-toggle {
+    font-size: 26px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+/* ==================================================== */
+/* 4. SEÇÕES COM FUNDO FULL-WIDTH (Início, Galeria, Contato, Sobre) */
+/* ==================================================== */
+
+.secao-full-width-pattern {
+    background: url(fundos/3.jpg);
+    padding: 40px 0;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.secao-bem-vindo {
+    /* Estilos adicionais específicos para a seção de boas-vindas se necessário */
+}
+
+/* ==================================================== */
+/* 5. PÁGINA INICIAL (INDEX) - Elementos Específicos */
+/* ==================================================== */
+.container-pagina .titulo-principal1 {
+    font-size: 3.5em;
+    color: #FFFF00;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.container-pagina .subtitulo-principal {
+    font-size: 1.5em;
+    color: #f00;
+    margin-bottom: 40px;
+}
+
+.botoes-acao {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-acao {
+    background-color: #FFFF00;
+    color: #1a1a1a;
+    padding: 15px 35px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-acao:hover {
+    background-color: #cc0000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+}
+
+.btn-acao.btn-secundario {
+    background-color: #FFFF00;
+    border-color: #fff;
+    color: #1a1a1a;
+}
+
+.btn-acao.btn-secundario:hover {
+    background-color: #cc0000;
+    border-color: #fff;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos para o novo Banner Promocional */
+.banner-promocional {
+    background-color: #0a0a0a;
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-promocional .container-pagina {
+    position: relative;
+    padding: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.banner-promocional .container-pagina:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 0, 0, 0.5);
+}
+
+.banner-promocional .banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.0s ease;
+}
+
+.banner-promocional .container-pagina:hover .banner-img {
+    transform: scale(1.02);
+}
+
+.banner-promocional .banner-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2));
+    color: #fff;
+    padding: 20px 40px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.banner-promocional .banner-overlay h2 {
+    font-size: 2.2em;
+    color: #f00;
+    margin-bottom: 10px; /* Garante espaçamento entre o h2 e o p */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.banner-promocional .banner-overlay p {
+    font-size: 1.1em;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.banner-promocional .btn-banner-acao {
+    background-color: #FFFF00;
+    color: #1a1a1a;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: inline-block;
+}
+
+.banner-promocional .btn-banner-acao:hover {
+    background-color: #cc0000;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+}
+
+/* ==================================================== */
+/* 6. PÁGINA DE JOGOS (JOGOS.HTML) - Carrossel e Cards */
+/* ==================================================== */
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    max-height: 50vh;
+    overflow: hidden;
+    margin-top: 50px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+}
+
+.hero-carousel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.4);
+}
+
+.hero-carousel img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+.slides-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+.carousel-dots {
+    text-align: center;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.carousel-button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgba(0,0,0,0.3);
+    border: none;
+    user-select: none;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+    border-radius: 0 3px 3px 0;
+}
+
+.next {
+    right: 10px;
+    border-radius: 3px 0 0 3px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0,0,0,0.6);
+}
+
+.galeria { /* Grid de cards na página de jogos */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    background: #111;
+}
+
+.card {
+    overflow: hidden;
+    border-radius: 10px;
+    background: #000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.4);
+}
+
+/* ==================================================== */
+/* 7. PÁGINA DE GALERIA (GALERIA.HTML) - Grid de Imagens */
+/* ==================================================== */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.galeria-item {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item .legenda {
+    padding: 15px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    background-color: #222;
+}
+
+.galeria-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.4);
+}
+
+.galeria-item:hover img {
+    transform: scale(1.05);
+}
+
+/* ==================================================== */
+/* 8. PÁGINA DE CONTATO (CONTATO.HTML) - Formulário */
+/* ==================================================== */
+.contato-form-container {
+    background-color: #0d0d0d;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.contato-form .form-grupo {
+    margin-bottom: 20px;
+}
+
+.contato-form label {
+    display: block;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.contato-form input[type="text"],
+.contato-form input[type="email"],
+.contato-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    background-color: #222;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contato-form input[type="text"]:focus,
+.contato-form input[type="email"]:focus,
+.contato-form textarea:focus {
+    outline: none;
+    border-color: #f00;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.3);
+}
+
+.contato-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-enviar {
+    background-color: #e60000;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: 100%;
+}
+
+.btn-enviar:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+}
+
+/* ==================================================== */
+/* 9. RODAPÉ (FOOTER) */
+/* ==================================================== */
+#rodape {
+    background-color: #1a1a1a;
+    color: #ccc;
+    padding: 30px 40px;
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rodape-secao {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.rodape-top {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+}
+
+.rodape-links-principais {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.rodape-links-principais li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.rodape-links-principais li a:hover {
+    color: #e60000;
+}
+
+.rodape-idioma {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+}
+
+.rodape-idioma .icon-idioma {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.rodape-idioma .seta-idioma {
+    margin-left: 8px;
+    font-size: 0.7em;
+}
+
+.rodape-mid {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+}
+
+.rodape-links-secundarios {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 0.85em;
+}
+
+.rodape-links-secundarios li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.rodape-links-secundarios li a:hover {
+    color: #fff;
+}
+
+.rodape-redes-sociais {
+    display: flex;
+    gap: 15px;
+}
+
+.rodape-redes-sociais a img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0.8) grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.rodape-redes-sociais a:hover img {
+    filter: brightness(1) grayscale(0%);
+    transform: scale(1.1);
+}
+
+.rodape-bottom {
+    margin-bottom: 0;
+    font-size: 0.8em;
+    color: #888;
+}
+
+/* ==================================================== */
+/* 10. MEDIA QUERIES (RESPONSIVIDADE) */
+/* ==================================================== */
+
+@media (max-width: 1366px) {
+    .galeria {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo-link {
+        order: 0;
+        margin-bottom: 0;
+    }
+
+    #menu-toggle {
+        display: block;
+        align-self: flex-start;
+        order: 0;
+        margin: 0;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #111;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        padding: 5px 0;
+        z-index: 99;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        text-align: center;
+        font-size: 1rem;
+        padding: 6px 0;
+    }
+
+    .menu li:first-child {
+        border-top: none;
+    }
+
+    /* Página Inicial */
+    .container-pagina .titulo-principal1 {
+        font-size: 2.5em;
+    }
+
+    .container-pagina .subtitulo-principal {
+        font-size: 1.2em;
+    }
+
+    .botoes-acao {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn-acao {
+        width: 30%;
+        margin: 0 auto;
+        padding: 8px 20px; /* Ainda menor em mobile */
+        font-size: 1em; /* Fonte também um pouco menor */
+    }
+
+    /* Página de Jogos - Carrossel */
+    .hero-carousel {
+        max-height: unset;
+    }
+
+    .slide img {
+        max-height: 50vh;
+    }
+
+    /* Página de Jogos - Grid de Cards */
+    .galeria {
+        padding: 10px;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    /* Página de Galeria */
+    .container-pagina {
+        padding: 20px 10px;
+    }
+
+    .container-pagina h1 {
+        font-size: 2em;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    /* Página de Contato */
+    .contato-form-container {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Rodapé */
+    #rodape {
+        padding: 20px;
+    }
+
+    .rodape-secao {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .rodape-top, .rodape-mid {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+
+    .rodape-links-principais,
+    .rodape-links-secundarios {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .rodape-info-cidades {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Media Query para o banner em telas menores */
+    .banner-promocional {
+        padding: 40px 0;
+    }
+
+    .banner-promocional .container-pagina {
+        border-radius: 10px;
+    }
+
+    .banner-promocional .banner-overlay {
+        padding: 15px 20px;
+        text-align: center;
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .banner-promocional .banner-overlay h2 {
+        font-size: 1.6em;
+        margin-bottom: 8px;
+        line-height: 1.2;
+    }
+
+    .banner-promocional .banner-overlay p {
+        font-size: 0.95em;
+        margin-bottom: 15px;
+    }
+
+    .banner-promocional .btn-banner-acao {
+        width: 30%;
+        font-size: 0.9em; /* Ainda menor para mobile */
+        padding: 8px 18px; /* Padding ajustado para o novo tamanho de fonte */
+    }
+}
+
+/* Media Query para Telas Muito Pequenas (até 480px) */
+@media (max-width: 480px) {
+    .container-pagina .titulo-principal1 {
+        font-size: 2em;
+    }
+
+    .container-pagina .subtitulo-principal {
+        font-size: 1em;
+    }
+
+    .btn-acao {
+        width: 30%;
+        padding: 6px 15px; /* Ainda mais compacto em telas muito pequenas */
+        font-size: 0.9em;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* DUAS colunas com min-width de 140px */
+        gap: 10px; /* Reduzi o gap para as imagens ficarem mais próximas */
+        padding: 10px;
+    }
+
+     .galeria-jogo-grid img {
+        height: 100px; /* Altura ajustada para caberem duas por linha */
+    }
+
+    /* Ajustes para o banner em telas extra pequenas */
+    .banner-promocional .banner-overlay h2 {
+        font-size: 1.4em;
+    }
+
+    .banner-promocional .banner-overlay p {
+        font-size: 0.9em;
+    }
+
+    .banner-promocional .btn-banner-acao {
+        width: 30%;
+        font-size: 0.85em; /* Minimizando o tamanho do botão para telas muito pequenas */
+        padding: 6px 15px;
+    }
+}
+
+/* ==================================================== */
+/* 11. SOBRE */
+/* ==================================================== */
+
+#logo1 {
+    text-align: center; /* Centraliza a imagem horizontalmente */
+    margin-top: 40px; /* Espaçamento acima da logo */
+    margin-bottom: 40px; /* Espaçamento abaixo da logo */
+    padding: 20px; /* Adiciona um padding para espaçamento interno, se necessário */
+    background-color: rgba(0, 0, 0, 0.3); /* Um fundo sutil para a área da logo */
+    border-radius: 10px;
+    display: block; /* Garante que o div ocupa sua própria linha para margin auto */
+}
+
+#logo1 img {
+    max-width: 250px; /* Tamanho máximo da logo para desktop */
+    height: auto;
+    display: block; /* Garante que a imagem se comporta como um bloco para margin auto */
+    margin: 0 auto; /* Centraliza a imagem dentro de #logo1 */
+    transition: transform 0.3s ease-in-out;
+}
+
+#logo1 img:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+
+/* Media Queries (adicionar dentro das suas media queries existentes, ou como um novo bloco se preferir) */
+
+@media (max-width: 768px) {
+    /* ... (seu CSS existente para 768px) ... */
+
+    #logo1 {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 15px;
+    }
+
+    #logo1 img {
+        max-width: 180px; /* Tamanho menor para mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    /* ... (seu CSS existente para 480px) ... */
+
+    #logo1 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+
+    #logo1 img {
+        max-width: 150px; /* Ainda menor para telas muito pequenas */
+    }
+}
+
+/* ==================================================== */
+/* 12. PÁGINAS DOS JOGOS  */
+/* ==================================================== */
+
+.secao-jogo-detalhes {
+    background: url(fundos/1.jpg); /* Pode usar o mesmo fundo pattern ou um específico */
+    padding: 60px 0;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    color: #fff;
+    text-align: center; /* Centraliza o conteúdo geral */
+}
+
+.secao-jogo-detalhes .container-pagina {
+    padding: 0 30px; /* Adiciona padding lateral interno no container */
+    max-width: 1000px; /* Um max-width um pouco menor para o conteúdo do jogo */
+}
+
+.titulo-jogo {
+    font-size: 3.8em;
+    color: #f00; /* Vermelho Rockstar */
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+}
+
+.jogo-conteudo {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha em telas menores */
+    justify-content: center; /* Centraliza a capa e especificações */
+    align-items: flex-start; /* Alinha o topo da capa com o topo das especificações */
+    gap: 40px; /* Espaçamento entre a capa e as especificações */
+    margin-bottom: 50px;
+}
+
+.jogo-capa {
+    flex: 0 0 auto; /* Não cresce nem encolhe, largura baseada no conteúdo */
+    width: 400px; /* Largura padrão da capa */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jogo-capa:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(255, 0, 0, 0.5);
+}
+
+.jogo-capa img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px; /* Para as bordas da imagem */
+}
+
+.jogo-especificacoes {
+    flex: 1; /* Permite que ocupe o espaço restante */
+    max-width: 500px; /* Limita a largura máxima das especificações */
+    text-align: left;
+    background-color: rgba(17, 17, 17, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.jogo-especificacoes h2 {
+    font-size: 1.8em;
+    color: #FFFF00; /* Amarelo Rockstar */
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.jogo-especificacoes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.jogo-especificacoes ul li {
+    font-size: 1.1em;
+    color: #ccc;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.jogo-especificacoes ul li strong {
+    color: #fff;
+    margin-right: 5px;
+}
+
+/* Estilo para as logos centralizadas */
+.logo-jogo-centralizada,
+.logo-rockstar-final {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.logo-jogo-centralizada img,
+.logo-rockstar-final img {
+    max-width: 300px; /* Ajuste o tamanho da logo do jogo */
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-jogo-centralizada img{
+  height: 80px;
+}
+
+.logo-rockstar-final img {
+  height: 200px;
+}
+
+.logo-jogo-centralizada img:hover,
+.logo-rockstar-final img:hover {
+    transform: scale(1.08);
+}
+
+
+.titulo-secao-jogo {
+    font-size: 2.8em;
+    color: #f00; /* Vermelho Rockstar */
+    margin-top: 60px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    border-bottom: 3px solid rgba(255, 0, 0, 0.3);
+    padding-bottom: 15px;
+    display: inline-block; /* Para que a linha inferior não se estenda por toda a largura */
+}
+
+.texto-descricao {
+    font-size: 1.1em;
+    color: #ccc;
+    line-height: 1.8;
+    max-width: 800px; /* Limita a largura do texto para melhor leitura */
+    margin: 0 auto 50px auto; /* Centraliza o texto e adiciona margem inferior */
+    text-align: justify; /* Justifica o texto para um visual mais formal */
+    padding: 0 10px; /* Um pequeno padding para evitar texto grudado nas bordas em mobile */
+}
+
+
+.galeria-jogo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 colunas em desktop, responsivo */
+    gap: 20px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.galeria-jogo-grid img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens da galeria */
+    object-fit: cover; /* Recorta a imagem para preencher a área, mantendo a proporção */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.galeria-jogo-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+}
+
+/* ==================================================== */
+/* MEDIA QUERIES PARA PÁGINAS DE JOGOS */
+/* ==================================================== */
+
+@media (max-width: 992px) {
+    .titulo-jogo {
+        font-size: 3.2em;
+    }
+    .jogo-conteudo {
+        flex-direction: column; /* Capa e especificações empilham em telas menores */
+        align-items: center; /* Centraliza-os */
+        gap: 30px;
+    }
+    .jogo-capa {
+        width: 300px; /* Capa um pouco menor */
+    }
+    .jogo-especificacoes {
+        max-width: 80%; /* Ajusta largura das especificações */
+        padding: 25px;
+    }
+    .titulo-secao-jogo {
+        font-size: 2.2em;
+        margin-top: 50px;
+        margin-bottom: 25px;
+    }
+    .texto-descricao {
+        max-width: 90%;
+        font-size: 1em;
+    }
+    .galeria-jogo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Menos colunas ou imagens menores */
+        padding: 20px;
+        gap: 15px;
+    }
+    .galeria-jogo-grid img {
+        height: 210px;
+    }
+    .logo-jogo-centralizada img,
+    .logo-rockstar-final img {
+        max-width: 240px;
+        max-height: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* ... (seus estilos existentes para 768px) ... */
+    .secao-jogo-detalhes {
+        padding: 40px 0;
+    }
+    .secao-jogo-detalhes .container-pagina {
+        padding: 0 15px;
+    }
+    .titulo-jogo {
+        font-size: 2.8em;
+        margin-bottom: 25px;
+    }
+    .jogo-capa {
+        width: 270px; /* Capa ainda menor */
+    }
+    .jogo-especificacoes {
+        padding: 20px;
+    }
+    .jogo-especificacoes h2 {
+        font-size: 1.6em;
+    }
+    .jogo-especificacoes ul li {
+        font-size: 1em;
+    }
+    .titulo-secao-jogo {
+        font-size: 2em;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    .texto-descricao {
+        font-size: 0.95em;
+        margin-bottom: 40px;
+    }
+    .galeria-jogo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Duas colunas em mobile */
+        gap: 10px;
+        padding: 15px;
+    }
+    .galeria-jogo-grid img {
+        height: 230px;
+    }
+    .logo-jogo-centralizada,
+    .logo-rockstar-final {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 15px;
+    }
+    .logo-jogo-centralizada img,
+    .logo-rockstar-final img {
+        max-width: 190px;
+        max-height: 190px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* ... (seus estilos existentes para 480px) ... */
+    .titulo-jogo {
+        font-size: 2.2em;
+        margin-bottom: 20px;
+    }
+    .jogo-capa {
+        width: 250px; /* Capa bem compacta */
+    }
+    .jogo-especificacoes {
+        padding: 15px;
+    }
+    .jogo-especificacoes h2 {
+        font-size: 1.4em;
+    }
+    .jogo-especificacoes ul li {
+        font-size: 0.9em;
+    }
+    .titulo-secao-jogo {
+        font-size: 1.8em;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+    .texto-descricao {
+        font-size: 0.9em;
+        margin-bottom: 30px;
+    }
+    .galeria-jogo-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+        padding: 10px;
+    }
+    .galeria-jogo-grid img {
+        height: 250px;
+       
+    }
+    .logo-jogo-centralizada,
+    .logo-rockstar-final {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+    .logo-jogo-centralizada img,
+    .logo-rockstar-final img {
+        max-width: 140px;
+        max-height: 140px;
+    }
+}
