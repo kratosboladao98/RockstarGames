@@ -161,7 +161,7 @@ header.header-hidden {
 }
 
 .secao-bem-vindo {
-    /* Estilos adicionais específicos para a seção de boas-vindas se necessário */
+
 }
 
 /* ==================================================== */
@@ -220,7 +220,6 @@ header.header-hidden {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Estilos para o novo Banner Promocional */
 .banner-promocional {
     background-color: #0a0a0a;
     padding: 60px 0;
@@ -270,7 +269,7 @@ header.header-hidden {
 .banner-promocional .banner-overlay h2 {
     font-size: 2.2em;
     color: #f00;
-    margin-bottom: 10px; /* Garante espaçamento entre o h2 e o p */
+    margin-bottom: 10px; 
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
@@ -408,7 +407,7 @@ header.header-hidden {
     background-color: rgba(0,0,0,0.6);
 }
 
-.galeria { /* Grid de cards na página de jogos */
+.galeria { 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 20px;
@@ -721,7 +720,7 @@ header.header-hidden {
         border-top: none;
     }
 
-    /* Página Inicial */
+
     .container-pagina .titulo-principal1 {
         font-size: 2.5em;
     }
@@ -738,8 +737,8 @@ header.header-hidden {
     .btn-acao {
         width: 30%;
         margin: 0 auto;
-        padding: 8px 20px; /* Ainda menor em mobile */
-        font-size: 1em; /* Fonte também um pouco menor */
+        padding: 8px 20px; 
+        font-size: 1em; 
     }
 
     /* Página de Jogos - Carrossel */
@@ -805,7 +804,7 @@ header.header-hidden {
         justify-content: center;
     }
 
-    /* Media Query para o banner em telas menores */
+    /* Banner */
     .banner-promocional {
         padding: 40px 0;
     }
@@ -837,12 +836,11 @@ header.header-hidden {
 
     .banner-promocional .btn-banner-acao {
         width: 30%;
-        font-size: 0.9em; /* Ainda menor para mobile */
-        padding: 8px 18px; /* Padding ajustado para o novo tamanho de fonte */
+        font-size: 0.9em; 
+        padding: 8px 18px; 
     }
 }
 
-/* Media Query para Telas Muito Pequenas (até 480px) */
 @media (max-width: 480px) {
     .container-pagina .titulo-principal1 {
         font-size: 2em;
@@ -854,21 +852,21 @@ header.header-hidden {
 
     .btn-acao {
         width: 30%;
-        padding: 6px 15px; /* Ainda mais compacto em telas muito pequenas */
+        padding: 6px 15px; 
         font-size: 0.9em;
     }
 
     .galeria {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* DUAS colunas com min-width de 140px */
-        gap: 10px; /* Reduzi o gap para as imagens ficarem mais próximas */
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+        gap: 10px; 
         padding: 10px;
     }
 
      .galeria-jogo-grid img {
-        height: 100px; /* Altura ajustada para caberem duas por linha */
+        height: 100px; 
     }
 
-    /* Ajustes para o banner em telas extra pequenas */
+    /* banner */
     .banner-promocional .banner-overlay h2 {
         font-size: 1.4em;
     }
@@ -879,7 +877,7 @@ header.header-hidden {
 
     .banner-promocional .btn-banner-acao {
         width: 30%;
-        font-size: 0.85em; /* Minimizando o tamanho do botão para telas muito pequenas */
+        font-size: 0.85em; 
         padding: 6px 15px;
     }
 }
@@ -889,32 +887,30 @@ header.header-hidden {
 /* ==================================================== */
 
 #logo1 {
-    text-align: center; /* Centraliza a imagem horizontalmente */
-    margin-top: 40px; /* Espaçamento acima da logo */
-    margin-bottom: 40px; /* Espaçamento abaixo da logo */
-    padding: 20px; /* Adiciona um padding para espaçamento interno, se necessário */
-    background-color: rgba(0, 0, 0, 0.3); /* Um fundo sutil para a área da logo */
+    text-align: center; 
+    margin-top: 40px; 
+    margin-bottom: 40px; 
+    padding: 20px; 
+    background-color: rgba(0, 0, 0, 0.3); 
     border-radius: 10px;
-    display: block; /* Garante que o div ocupa sua própria linha para margin auto */
+    display: block; 
 }
 
 #logo1 img {
-    max-width: 250px; /* Tamanho máximo da logo para desktop */
+    max-width: 250px; 
     height: auto;
-    display: block; /* Garante que a imagem se comporta como um bloco para margin auto */
-    margin: 0 auto; /* Centraliza a imagem dentro de #logo1 */
+    display: block; 
+    margin: 0 auto; 
     transition: transform 0.3s ease-in-out;
 }
 
 #logo1 img:hover {
-    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    transform: scale(1.05); 
 }
 
 
-/* Media Queries (adicionar dentro das suas media queries existentes, ou como um novo bloco se preferir) */
 
 @media (max-width: 768px) {
-    /* ... (seu CSS existente para 768px) ... */
 
     #logo1 {
         margin-top: 30px;
@@ -923,12 +919,11 @@ header.header-hidden {
     }
 
     #logo1 img {
-        max-width: 180px; /* Tamanho menor para mobile */
+        max-width: 180px; 
     }
 }
 
 @media (max-width: 480px) {
-    /* ... (seu CSS existente para 480px) ... */
 
     #logo1 {
         margin-top: 20px;
@@ -937,7 +932,7 @@ header.header-hidden {
     }
 
     #logo1 img {
-        max-width: 150px; /* Ainda menor para telas muito pequenas */
+        max-width: 150px; 
     }
 }
 
@@ -946,21 +941,21 @@ header.header-hidden {
 /* ==================================================== */
 
 .secao-jogo-detalhes {
-    background: url(fundos/1.jpg); /* Pode usar o mesmo fundo pattern ou um específico */
+    background: url(fundos/1.jpg); 
     padding: 60px 0;
     min-height: calc(100vh - var(--header-height) - var(--footer-height));
     color: #fff;
-    text-align: center; /* Centraliza o conteúdo geral */
+    text-align: center; 
 }
 
 .secao-jogo-detalhes .container-pagina {
-    padding: 0 30px; /* Adiciona padding lateral interno no container */
-    max-width: 1000px; /* Um max-width um pouco menor para o conteúdo do jogo */
+    padding: 0 30px; 
+    max-width: 1000px; 
 }
 
 .titulo-jogo {
     font-size: 3.8em;
-    color: #f00; /* Vermelho Rockstar */
+    color: #f00; 
     margin-bottom: 30px;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
     font-weight: bold;
@@ -968,16 +963,16 @@ header.header-hidden {
 
 .jogo-conteudo {
     display: flex;
-    flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha em telas menores */
-    justify-content: center; /* Centraliza a capa e especificações */
-    align-items: flex-start; /* Alinha o topo da capa com o topo das especificações */
-    gap: 40px; /* Espaçamento entre a capa e as especificações */
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 40px; 
     margin-bottom: 50px;
 }
 
 .jogo-capa {
-    flex: 0 0 auto; /* Não cresce nem encolhe, largura baseada no conteúdo */
-    width: 400px; /* Largura padrão da capa */
+    flex: 0 0 auto; 
+    width: 400px; 
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
@@ -993,12 +988,12 @@ header.header-hidden {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 10px; /* Para as bordas da imagem */
+    border-radius: 10px; 
 }
 
 .jogo-especificacoes {
-    flex: 1; /* Permite que ocupe o espaço restante */
-    max-width: 500px; /* Limita a largura máxima das especificações */
+    flex: 1; 
+    max-width: 500px; 
     text-align: left;
     background-color: rgba(17, 17, 17, 0.8);
     padding: 30px;
@@ -1008,7 +1003,7 @@ header.header-hidden {
 
 .jogo-especificacoes h2 {
     font-size: 1.8em;
-    color: #FFFF00; /* Amarelo Rockstar */
+    color: #FFFF00; 
     margin-bottom: 20px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 10px;
@@ -1031,7 +1026,6 @@ header.header-hidden {
     margin-right: 5px;
 }
 
-/* Estilo para as logos centralizadas */
 .logo-jogo-centralizada,
 .logo-rockstar-final {
     text-align: center;
@@ -1045,7 +1039,7 @@ header.header-hidden {
 
 .logo-jogo-centralizada img,
 .logo-rockstar-final img {
-    max-width: 300px; /* Ajuste o tamanho da logo do jogo */
+    max-width: 300px; 
     display: block;
     margin: 0 auto;
     transition: transform 0.3s ease;
@@ -1067,29 +1061,29 @@ header.header-hidden {
 
 .titulo-secao-jogo {
     font-size: 2.8em;
-    color: #f00; /* Vermelho Rockstar */
+    color: #f00; 
     margin-top: 60px;
     margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     border-bottom: 3px solid rgba(255, 0, 0, 0.3);
     padding-bottom: 15px;
-    display: inline-block; /* Para que a linha inferior não se estenda por toda a largura */
+    display: inline-block; 
 }
 
 .texto-descricao {
     font-size: 1.1em;
     color: #ccc;
     line-height: 1.8;
-    max-width: 800px; /* Limita a largura do texto para melhor leitura */
-    margin: 0 auto 50px auto; /* Centraliza o texto e adiciona margem inferior */
-    text-align: justify; /* Justifica o texto para um visual mais formal */
-    padding: 0 10px; /* Um pequeno padding para evitar texto grudado nas bordas em mobile */
+    max-width: 800px; 
+    margin: 0 auto 50px auto; 
+    text-align: justify; 
+    padding: 0 10px; 
 }
 
 
 .galeria-jogo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 colunas em desktop, responsivo */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 20px;
     padding: 30px;
     background-color: rgba(0, 0, 0, 0.6);
@@ -1101,8 +1095,8 @@ header.header-hidden {
 
 .galeria-jogo-grid img {
     width: 100%;
-    height: 200px; /* Altura fixa para as imagens da galeria */
-    object-fit: cover; /* Recorta a imagem para preencher a área, mantendo a proporção */
+    height: 200px; 
+    object-fit: cover; 
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1123,15 +1117,15 @@ header.header-hidden {
         font-size: 3.2em;
     }
     .jogo-conteudo {
-        flex-direction: column; /* Capa e especificações empilham em telas menores */
-        align-items: center; /* Centraliza-os */
+        flex-direction: column; 
+        align-items: center; 
         gap: 30px;
     }
     .jogo-capa {
-        width: 300px; /* Capa um pouco menor */
+        width: 300px; 
     }
     .jogo-especificacoes {
-        max-width: 80%; /* Ajusta largura das especificações */
+        max-width: 80%; 
         padding: 25px;
     }
     .titulo-secao-jogo {
@@ -1144,7 +1138,7 @@ header.header-hidden {
         font-size: 1em;
     }
     .galeria-jogo-grid {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Menos colunas ou imagens menores */
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
         padding: 20px;
         gap: 15px;
     }
@@ -1159,7 +1153,6 @@ header.header-hidden {
 }
 
 @media (max-width: 768px) {
-    /* ... (seus estilos existentes para 768px) ... */
     .secao-jogo-detalhes {
         padding: 40px 0;
     }
@@ -1171,7 +1164,7 @@ header.header-hidden {
         margin-bottom: 25px;
     }
     .jogo-capa {
-        width: 270px; /* Capa ainda menor */
+        width: 270px;
     }
     .jogo-especificacoes {
         padding: 20px;
@@ -1192,7 +1185,7 @@ header.header-hidden {
         margin-bottom: 40px;
     }
     .galeria-jogo-grid {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Duas colunas em mobile */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
         gap: 10px;
         padding: 15px;
     }
@@ -1213,13 +1206,12 @@ header.header-hidden {
 }
 
 @media (max-width: 480px) {
-    /* ... (seus estilos existentes para 480px) ... */
     .titulo-jogo {
         font-size: 2.2em;
         margin-bottom: 20px;
     }
     .jogo-capa {
-        width: 250px; /* Capa bem compacta */
+        width: 250px; 
     }
     .jogo-especificacoes {
         padding: 15px;
@@ -1240,7 +1232,7 @@ header.header-hidden {
         margin-bottom: 30px;
     }
     .galeria-jogo-grid {
-        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+        grid-template-columns: 1fr; 
         padding: 10px;
     }
     .galeria-jogo-grid img {
